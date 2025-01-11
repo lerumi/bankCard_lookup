@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="enter_bin">Введите BIN</string>
+    <string name="scheme_network">SCHEME/NETWORK</string>
+    <string name="brand">BRAND</string>
+    <string name="card_number_length">CARD NUMBER LENGTH</string>
+    <string name="luhn_valid">LUHN VALID</string>
+    <string name="type">TYPE</string>
+    <string name="prepaid">PREPAID</string>
+    <string name="country">COUNTRY</string>
+    <string name="latitude">LATITUDE</string>
+    <string name="longitude">LONGITUDE</string>
+    <string name="bank_name">BANK NAME</string>
+    <string name="bank_city">BANK CITY</string>
+    <string name="bank_url">BANK URL</string>
+    <string name="bank_phone">BANK PHONE</string>
+</resources>
