@@ -4,6 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Card(
+    val bin: String = "",
     val number: Number = Number(),
     val scheme: String = "-",
     val type: String = "-",

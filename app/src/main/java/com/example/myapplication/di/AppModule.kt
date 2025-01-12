@@ -14,10 +14,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModel {
+object AppModule {
     @Singleton
     @Provides
     fun provideAppContext(application: Application): Context = application.applicationContext
+
     @Provides
     @Singleton
     fun provideLocalState(): MutableStateFlow<Locale> {
@@ -27,12 +28,12 @@ object AppModel {
     @Provides
     @Singleton
     fun provideConfiguration(@ApplicationContext context: Context): Configuration {
-        return  context.resources.configuration
+        return context.resources.configuration
     }
 
     @Provides
     @Singleton
-    fun providerThemeState():MutableStateFlow<Boolean>{
+    fun providerThemeState(): MutableStateFlow<Boolean> {
         return MutableStateFlow(false)
     }
 }
