@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModel {
+object DataModule {
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext context: Context): QueryDb =

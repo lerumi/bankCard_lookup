@@ -14,4 +14,7 @@
     <string name="bank_city">BANK CITY</string>
     <string name="bank_url">BANK URL</string>
     <string name="bank_phone">BANK PHONE</string>
+    <string name="all_query">К предыдущим запросам</string>
+    <string name="back">Назад</string>
+    <string name="bin">BIN</string>
 </resources>

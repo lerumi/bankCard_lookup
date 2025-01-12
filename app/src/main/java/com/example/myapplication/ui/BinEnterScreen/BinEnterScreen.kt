@@ -33,15 +33,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.myapplication.R
+import com.example.myapplication.ui.QueryListScreen.QueryListScreen
 
 
-@Preview(showBackground = true)
 @Composable
 fun BinEnterScreen(
-    viewModel: BinEnterScreenVM = remember {
-        BinEnterScreenVM()
-    }
+    onNavigateToQueryList: () -> Unit,
+    viewModel: BinEnterScreenVM = hiltViewModel()
 ) {
     val binField by viewModel.bin.collectAsState()
     val cardInfo by viewModel.cardInfo.collectAsState()
@@ -63,17 +63,32 @@ fun BinEnterScreen(
         )
         CardInfoRow(label = stringResource(R.string.scheme_network), value = cardInfo.scheme)
         CardInfoRow(label = stringResource(R.string.brand), value = cardInfo.brand)
-        CardInfoRow(label = stringResource(R.string.card_number_length), value = cardInfo.number.length.toString())
-        CardInfoRow(label = stringResource(R.string.luhn_valid), value = cardInfo.number.luhn.toString())
+        CardInfoRow(
+            label = stringResource(R.string.card_number_length),
+            value = cardInfo.number.length.toString()
+        )
+        CardInfoRow(
+            label = stringResource(R.string.luhn_valid),
+            value = cardInfo.number.luhn.toString()
+        )
         CardInfoRow(label = stringResource(R.string.type), value = cardInfo.type)
         CardInfoRow(label = stringResource(R.string.prepaid), value = cardInfo.prepaid.toString())
         CardInfoRow(label = stringResource(R.string.country), value = cardInfo.country.name)
-        CardInfoRow(label = stringResource(R.string.latitude), value = cardInfo.country.latitude.toString())
-        CardInfoRow(label = stringResource(R.string.longitude), value = cardInfo.country.longitude.toString())
+        CardInfoRow(
+            label = stringResource(R.string.latitude),
+            value = cardInfo.country.latitude.toString()
+        )
+        CardInfoRow(
+            label = stringResource(R.string.longitude),
+            value = cardInfo.country.longitude.toString()
+        )
         CardInfoRow(label = stringResource(R.string.bank_name), value = cardInfo.bank.name)
         CardInfoRow(label = stringResource(R.string.bank_city), value = cardInfo.bank.city)
         CardInfoRow(label = stringResource(R.string.bank_url), value = cardInfo.bank.url)
         CardInfoRow(label = stringResource(R.string.bank_phone), value = cardInfo.bank.phone)
+        Button(onClick = onNavigateToQueryList) {
+            Text(text = stringResource(R.string.all_query))
+        }
     }
 }
 
